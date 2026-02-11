@@ -35,15 +35,15 @@ const Index = () => {
   return (
     <main>
       {/* Hero */}
-      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-foreground text-background">
+      <section className="relative flex min-h-[85vh] items-center overflow-hidden bg-foreground text-background">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
             src="/images/home-banner.png" 
             alt="WE-MEN Hero Banner" 
-            className="h-full w-full object-cover opacity-60" 
+            className="h-full w-full object-cover object-right md:object-center" 
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
         </div>
         
         <div className="container relative z-10 py-20">
@@ -63,10 +63,10 @@ const Index = () => {
               Designed for modern men who demand structure, support, and breathability. WE-MEN inner layers sculpt your body while keeping you cool and comfortable all day long.
             </motion.p>
             <motion.div variants={fadeIn} className="mt-8 flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-accent">
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-accent font-bold">
                 <Link to="/products">Shop Now <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-background/30 text-background hover:bg-background/10">
+              <Button asChild variant="outline" size="lg" className="border-white/50 bg-white/5 text-white hover:bg-white hover:text-black transition-colors">
                 <Link to="/products">Explore Collection</Link>
               </Button>
             </motion.div>
