@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ShoppingCart, Heart, Search, Menu, X, User } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
@@ -20,6 +20,16 @@ const Header = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/products?q=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchOpen(false);
+      setSearchQuery("");
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -79,7 +89,7 @@ const Header = () => {
         <div className="flex items-center gap-1">
           {/* Search */}
           {searchOpen ? (
-            <div className="flex items-center gap-2">
+            <form onSubmit={handleSearch} className="flex items-center gap-2">
               <Input
                 placeholder="Search products..."
                 value={searchQuery}
@@ -87,10 +97,10 @@ const Header = () => {
                 className="w-40 md:w-60"
                 autoFocus
               />
-              <Button variant="ghost" size="icon" onClick={() => { setSearchOpen(false); setSearchQuery(""); }}>
+              <Button type="button" variant="ghost" size="icon" onClick={() => { setSearchOpen(false); setSearchQuery(""); }}>
                 <X className="h-4 w-4" />
               </Button>
-            </div>
+            </form>
           ) : (
             <Button variant="ghost" size="icon" onClick={() => setSearchOpen(true)}>
               <Search className="h-5 w-5" />

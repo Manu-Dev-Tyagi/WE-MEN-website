@@ -1,4 +1,5 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import { Input } from "@/components/ui/input";
@@ -21,11 +22,20 @@ const categories = [
 const sizes = ["S", "M", "L", "XL", "XXL"];
 
 const Products = () => {
-  const [search, setSearch] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get("q") || "");
   const [category, setCategory] = useState("all");
   const [sortBy, setSortBy] = useState("featured");
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
   const [inStockOnly, setInStockOnly] = useState(false);
+
+
+  useEffect(() => {
+    const q = searchParams.get("q");
+    if (q !== null) {
+      setSearch(q);
+    }
+  }, [searchParams]);
 
   const filtered = useMemo(() => {
     let result = [...products];
@@ -120,7 +130,15 @@ const Products = () => {
             <Input
               placeholder="Search products..."
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => {
+                const val = e.target.value;
+                setSearch(val);
+                if (val) {
+                  setSearchParams({ q: val }, { replace: true });
+                } else {
+                  setSearchParams({}, { replace: true });
+                }
+              }}
               className="pl-10"
             />
           </div>
