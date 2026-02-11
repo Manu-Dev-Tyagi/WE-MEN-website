@@ -31,28 +31,28 @@ const CartPage = () => {
           <div className="lg:col-span-2">
             <div className="space-y-4">
               {items.map((item) => (
-                <div key={`${item.productId}-${item.size}-${item.color}`} className="flex gap-4 rounded-xl border bg-card p-4">
+                <div key={`${item.productId}-${item.size}`} className="flex gap-4 rounded-xl border bg-card p-4">
                   <div className="h-24 w-20 shrink-0 overflow-hidden rounded-lg bg-muted">
                     <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
                   </div>
                   <div className="flex flex-1 flex-col justify-between">
                     <div>
                       <h3 className="font-display font-semibold">{item.name}</h3>
-                      <p className="text-sm text-muted-foreground">Size: {item.size} · Color: {item.color}</p>
+                      <p className="text-sm text-muted-foreground">Size: {item.size}</p>
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => updateQuantity(item.productId, item.size, item.color, item.quantity - 1)}>
+                        <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => updateQuantity(item.productId, item.size, item.quantity - 1)}>
                           <Minus className="h-3 w-3" />
                         </Button>
                         <span className="w-6 text-center text-sm font-medium">{item.quantity}</span>
-                        <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => updateQuantity(item.productId, item.size, item.color, item.quantity + 1)}>
+                        <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => updateQuantity(item.productId, item.size, item.quantity + 1)}>
                           <Plus className="h-3 w-3" />
                         </Button>
                       </div>
                       <div className="flex items-center gap-3">
                         <span className="font-price font-semibold">₹{item.price * item.quantity}</span>
-                        <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive" onClick={() => { removeItem(item.productId, item.size, item.color); toast.success("Item removed"); }}>
+                        <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive" onClick={() => { removeItem(item.productId, item.size); toast.success("Item removed"); }}>
                           <Trash2 className="h-4 w-4" />
                         </Button>
                       </div>

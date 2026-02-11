@@ -138,13 +138,13 @@ const Checkout = () => {
               <h3 className="font-display text-lg font-semibold">Order Summary</h3>
               <div className="mt-4 space-y-3">
                 {items.map((item) => (
-                  <div key={`${item.productId}-${item.size}-${item.color}`} className="flex items-center gap-3">
+                  <div key={`${item.productId}-${item.size}`} className="flex items-center gap-3">
                     <div className="h-12 w-10 shrink-0 overflow-hidden rounded bg-muted">
                       <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
                     </div>
                     <div className="flex-1 text-sm">
                       <p className="font-medium">{item.name}</p>
-                      <p className="text-xs text-muted-foreground">{item.size} · {item.color} · Qty: {item.quantity}</p>
+                      <p className="text-xs text-muted-foreground">{item.size} · Qty: {item.quantity}</p>
                     </div>
                     <span className="font-price text-sm font-medium">₹{item.price * item.quantity}</span>
                   </div>

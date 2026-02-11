@@ -24,7 +24,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
       name: product.name,
       price: product.price,
       size: product.sizes[2],
-      color: product.colors[0].name,
       quantity: 1,
       image: product.images[0],
     });

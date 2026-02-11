@@ -46,7 +46,7 @@ const Orders = () => {
                       </div>
                       <div className="flex-1 text-sm">
                         <p className="font-medium">{item.name}</p>
-                        <p className="text-xs text-muted-foreground">{item.size} · {item.color} · Qty: {item.qty}</p>
+                        <p className="text-xs text-muted-foreground">{item.size} · Qty: {item.qty}</p>
                       </div>
                       <span className="font-price text-sm font-medium">₹{item.price * item.qty}</span>
                     </div>

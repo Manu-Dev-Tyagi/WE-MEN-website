@@ -11,7 +11,6 @@ export interface Product {
   features: string[];
   quickFeatures: { icon: string; text: string }[];
   sizes: string[];
-  colors: { name: string; hex: string }[];
   inStock: boolean;
   images: string[];
   fabricComposition: string;
@@ -46,11 +45,6 @@ export const products: Product[] = [
       { icon: "Clock", text: "8+ hour comfort" },
     ],
     sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: [
-      { name: "Black", hex: "#1A1A1A" },
-      { name: "Charcoal", hex: "#36454F" },
-      { name: "Navy", hex: "#1E2D3D" },
-    ],
     inStock: true,
     images: [
       "/images/products/we-tuck-2.png",
@@ -87,11 +81,6 @@ export const products: Product[] = [
       { icon: "Sun", text: "All-day wear" },
     ],
     sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: [
-      { name: "Black", hex: "#1A1A1A" },
-      { name: "Charcoal", hex: "#36454F" },
-      { name: "Navy", hex: "#1E2D3D" },
-    ],
     inStock: true,
     images: [
       "/images/products/we-sweat-2.png",
@@ -128,11 +117,6 @@ export const products: Product[] = [
       { icon: "Wind", text: "Breathable fabric" },
     ],
     sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: [
-      { name: "Black", hex: "#1A1A1A" },
-      { name: "Charcoal", hex: "#36454F" },
-      { name: "Navy", hex: "#1E2D3D" },
-    ],
     inStock: true,
     images: [
       "/images/products/we-press-2.png",
@@ -169,11 +153,6 @@ export const products: Product[] = [
       { icon: "Clock", text: "All-day comfort" },
     ],
     sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: [
-      { name: "Black", hex: "#1A1A1A" },
-      { name: "Charcoal", hex: "#36454F" },
-      { name: "Navy", hex: "#1E2D3D" },
-    ],
     inStock: true,
     images: [
       "/images/products/we-handle-2.png",
@@ -210,11 +189,6 @@ export const products: Product[] = [
       { icon: "Award", text: "Premium finish" },
     ],
     sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: [
-      { name: "Black", hex: "#1A1A1A" },
-      { name: "Charcoal", hex: "#36454F" },
-      { name: "Navy", hex: "#1E2D3D" },
-    ],
     inStock: true,
     images: [
       "/images/products/we-suit-2.png",

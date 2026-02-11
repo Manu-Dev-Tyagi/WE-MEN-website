@@ -27,7 +27,7 @@ const ProductDetail = () => {
   const { toggleItem, isInWishlist } = useWishlist();
 
   const [selectedSize, setSelectedSize] = useState("");
-  const [selectedColor, setSelectedColor] = useState("");
+
   const [quantity, setQuantity] = useState(1);
   const [mainImage, setMainImage] = useState(0);
 
@@ -45,13 +45,12 @@ const ProductDetail = () => {
 
   const handleAddToCart = () => {
     if (!selectedSize) { toast.error("Please select a size"); return; }
-    if (!selectedColor) { toast.error("Please select a color"); return; }
+
     addItem({
       productId: product.id,
       name: product.name,
       price: product.price,
       size: selectedSize,
-      color: selectedColor,
       quantity,
       image: product.images[0],
     });
@@ -60,13 +59,13 @@ const ProductDetail = () => {
 
   const handleBuyNow = () => {
     handleAddToCart();
-    if (selectedSize && selectedColor) {
+    if (selectedSize) {
       window.location.href = "/checkout";
     }
   };
 
   const whatsappMsg = encodeURIComponent(
-    `Hi WE-MEN! I'm interested in:\n\n*${product.name}*\nSize: ${selectedSize || "Not selected"}\nColor: ${selectedColor || "Not selected"}\nPrice: ₹${product.price}\n\nPlease help me place my order.`
+    `Hi WE-MEN! I'm interested in:\n\n*${product.name}*\nSize: ${selectedSize || "Not selected"}\nPrice: ₹${product.price}\n\nPlease help me place my order.`
   );
 
   return (
@@ -165,24 +164,7 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* Color */}
-            <div className="mt-6">
-              <h4 className="font-display text-sm font-semibold">Select Color</h4>
-              <div className="mt-2 flex gap-3">
-                {product.colors.map((color) => (
-                  <button
-                    key={color.name}
-                    onClick={() => setSelectedColor(color.name)}
-                    className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-sm transition-colors ${
-                      selectedColor === color.name ? "border-primary" : "hover:border-primary"
-                    }`}
-                  >
-                    <div className="h-4 w-4 rounded-full border" style={{ backgroundColor: color.hex }} />
-                    {color.name}
-                  </button>
-                ))}
-              </div>
-            </div>
+
 
             {/* Quantity */}
             <div className="mt-6">
