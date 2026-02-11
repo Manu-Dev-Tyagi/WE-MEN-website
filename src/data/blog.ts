@@ -26,7 +26,7 @@ If you have broad shoulders and a narrow waist, you're working with an athletic 
 Men with a rectangular build have similar shoulder and waist measurements. The key is to create the illusion of a V-shape. Structured blazers with padded shoulders and slim-fit trousers work wonders.
 
 ## The Round Build
-For men carrying weight around the midsection, the right shapewear can make a significant difference. Products like WE-TUCK provide instant smoothing while maintaining comfort throughout the day. Pair with vertical stripes and well-fitted (not tight) clothing.
+For men carrying weight around the midsection, the right shapewear can make a significant difference. Products like WE-CORE provide instant smoothing while maintaining comfort throughout the day. Pair with vertical stripes and well-fitted (not tight) clothing.
 
 ## The Inverted Triangle
 If your shoulders are significantly wider than your hips, balance your proportions with darker tops and lighter bottoms. Avoid overly structured shoulder pads.
@@ -136,7 +136,7 @@ When you look good, you feel good. And when you feel good, you perform better. I
     content: `A well-fitted suit can transform your appearance. But the foundation matters just as much.
 
 ## The Base Layer
-Your undershirt or shapewear is the foundation. A good compression base layer like WE-SUIT can smooth your silhouette and give your suit a cleaner drape.
+Your undershirt or shapewear is the foundation. A good compression base layer like WE-FRAME can smooth your silhouette and give your suit a cleaner drape.
 
 ## For Summer Weddings
 Indian summer weddings are a test of endurance. Choose moisture-wicking base layers (like WE-SWEAT) that keep you dry under heavy sherwanis and blazers.
